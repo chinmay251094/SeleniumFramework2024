@@ -1,0 +1,10 @@
+[
+  {
+    "Test Name": "testValidLogin",
+    "Test Description": "To test user is able to login with valid credentials",
+    "Execute": "yes",
+    "Count": 1,
+    "Priority": 1,
+    "Id": 1
+  }
+]

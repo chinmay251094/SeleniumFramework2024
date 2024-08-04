@@ -1,0 +1,56 @@
+#To start the browsers and Selenium Grid services: docker-compose -f docker-compose-browsers.yml up
+#To stop the browsers and Selenium Grid services: docker-compose -f docker-compose-browsers.yml down
+version: "3"
+services:
+  chrome117:
+    image: selenium/node-chrome:117.0
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    labels:
+      - "browser=chrome"
+      - "version=117.0"
+    volumes:
+      - "G:/Downloads:/home/seluser/Downloads"
+
+  edge117:
+    image: selenium/node-edge:117.0
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    labels:
+      - "browser=edge"
+      - "version=117.0"
+    volumes:
+      - "G:/Downloads:/home/seluser/Downloads"
+
+  firefox117:
+    image: selenium/node-firefox:117.0
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    labels:
+      - "browser=firefox"
+      - "version=117.0"
+    volumes:
+      - "G:/Downloads:/home/seluser/Downloads"
+
+  selenium-hub:
+    image: selenium/hub:4.11.0-20230801
+    container_name: selenium-hub
+    ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "4444:4444"

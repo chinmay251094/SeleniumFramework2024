@@ -1,0 +1,14 @@
+[
+  {
+    "Test Name": "testValidLogin",
+    "Test Description": "To test user is able to login with valid credentials",
+    "Execute": "yes",
+    "url": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+    "mode": "local",
+    "browser": "chrome",
+    "headless": "no",
+    "username": "Admin",
+    "password": "admin123",
+    "expectedUrl": "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
+  }
+]
