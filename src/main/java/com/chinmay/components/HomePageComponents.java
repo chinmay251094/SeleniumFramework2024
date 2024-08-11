@@ -1,11 +1,11 @@
 package com.chinmay.components;
 
 public enum HomePageComponents {
-    DASHBOARD("Dashboard"),
-    INVOICE("Invoice"),
-    TAG_MANAGEMENT("Tag Management"),
-    PAYMENTS("Payments"),
-    PETTY_EXPENSE("Petty Expense");
+    ADMIN("Admin"),
+    PIM("PIM"),
+    LEAVE("Leave"),
+    TIME("Time"),
+    RECRUITMENT("Recruitment");
 
     private final String menu;
 
